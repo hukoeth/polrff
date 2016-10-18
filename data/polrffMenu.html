@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="polrffMenu.css" />
+  </head>
+  <body>
+  <div class="container">
+    <ul class="w3-navbar w3-black">
+      <li class="tabnav"><span class="tabnav">Polr for Firefox</span></li>
+    </ul>
+
+    <div id="Main" class="tab w3-animate-fading">
+      <div class="panel show">
+        <table>
+          <tr><td class="w120px"><label for="org_url">Long URL</label></td><td><input id="org_url" style="width: 79%;" value="" />
+          <button id="shortenbutton" class="accordion" style="width: 18%;">Shorten</button></td></tr>
+          <tr><td><label for="short_url">Shortened URL</label></td><td><input id="short_url" onClick="this.setSelectionRange(0, this.value.length)" readonly="readonly" style="width: 98%;" value="Please wait..." /></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

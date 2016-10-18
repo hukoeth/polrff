@@ -1,0 +1,38 @@
+{
+  "title": "Polr for Firefox",
+  "name": "polrff",
+  "version": "0.0.1",
+  "description": "Shorten URLs with Polr",
+  "main": "index.js",
+  "author": "Hans-Ulrich Koeth",
+  "supportmail": "email@kiot.eu",
+  "icon": "data/icon-32.png",
+  "id": "polrff@kiot",
+  "engines": {
+    "firefox": ">=32.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "polr",
+    "URL",
+    "shorten"
+  ],
+  "permissions": {
+    "multiprocess": true
+  },
+  "preferences": [{
+      "name": "polrurl",
+      "title": "URL to your Polr v2 installation",
+      "description": "Enter the full url (e.g. https://mydomain.org/polr) to your Polr v2 installation.",
+      "type": "string",
+      "value": ""
+  },
+  {
+      "name": "apikey",
+      "title": "Your Polr v2 API key",
+      "description": "Please log on to your Polr installation and go to the admin area to get your API key.",
+      "type": "string",
+      "value": ""
+  }],
+  "browser": "Firefox"
+}
