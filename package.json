@@ -1,7 +1,7 @@
 {
   "title": "polrff",
   "name": "polrff",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Shorten URLs with Polr",
   "main": "index.js",
   "author": "Hans-Ulrich Koeth",
