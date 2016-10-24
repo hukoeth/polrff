@@ -1,0 +1,15 @@
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color:#fafafa;
+}
+
+input {
+  width: 400px;
+}
+
+table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+  font-size: small;
+}

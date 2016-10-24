@@ -1,13 +1,14 @@
 {
   "title": "polrff",
   "name": "polrff",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Shorten URLs with Polr",
   "main": "index.js",
   "author": "Hans-Ulrich Koeth",
   "supportmail": "email@kiot.eu",
   "icon": "data/icon-32.png",
   "id": "polrff@kiot",
+  "lib": "lib",
   "engines": {
     "firefox": ">=32.0a1"
   },

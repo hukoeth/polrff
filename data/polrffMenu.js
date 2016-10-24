@@ -11,7 +11,8 @@ self.port.on("update", function(sysData) {
 function shortenURL() {
   var orgUrl = document.getElementById("org_url").value.toLowerCase();
   if ((!_polr_url.startsWith("http://") && !_polr_url.startsWith("https://")) || _polr_key == "") {
-    alert("You have to configure the extension first. Click on 'OK'. Press Ctrl+Shift+A to open the add-ons page. Click on 'Extensions' on the left and then on 'Options' for the extension 'polrff'.");
+    alert("You have to configure the extension first.");
+    self.port.emit("showoptions");
     return;
   }
   if (!orgUrl.startsWith("http://") && !orgUrl.startsWith("https://")) {
@@ -27,5 +28,4 @@ function shortenURL() {
   oReq.send();  
 }
 
-document.getElementById("shortenbutton");
 document.getElementById("shortenbutton").onclick = shortenURL;

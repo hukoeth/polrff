@@ -9,18 +9,8 @@ ul {
   margin: 0 0 10px 0;
 }
 
-li.list-group-item, .panel-header {
-  font-size: small;
-}
-
-li.list-group-item {
-  border: 1px solid #ddd;
-  padding: 5px;
-  margin-top: -1px;
-} 
-
  /* Style the buttons that are used to open and close the accordion panel */
-button.accordion, .panel-header {
+button.accordion {
   background-color: #eee;
   color: #444;
   width: 100%;
@@ -28,39 +18,15 @@ button.accordion, .panel-header {
   border: none;
   outline: none;
   transition: 0.4s;
-}
-
-button.accordion {
   cursor: pointer;
   font-size: medium;
-}
-
-.panel-header {
-  padding: 5px 0 5px 10px;
-  font-weight: bold;
-  background-color: #444;
-  color: #fff;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-button.accordion.active, button.accordion:hover {
-  background-color: #ddd;
 }
 
 /* Style the accordion panel. Note: hidden by default */
 div.panel {
   padding: 0;
   background-color: white;
-  max-height: 0;
   overflow: hidden;
-  transition: 0.6s ease-in-out;
-  opacity: 0;
-}
-
-/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
-div.panel.show {
-    opacity: 1;
-    max-height: 1500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
 }
 
 button.accordion:after {
@@ -118,17 +84,6 @@ a.tabnav {
   color: #fff !important;
 }
 
-.w3-animate-fading {
-    animation: 1.5s ease 0s normal none 1 running opac;
-}
-@keyframes opac {
-0% {
-    opacity: 0;
-}
-100% {
-    opacity: 1;
-}
-}
 table {
   width: 100%;
   border: none;
@@ -140,66 +95,10 @@ td {
   padding-left: 10px;
 }
 
-.w50percent {
-  width: 50%;
-}
-
-.w80px {
-  width: 80px;
-}
-
-.w120px {
+.w114px {
   width: 114px;
 }
 
-tr:nth-child(even) {
-  background-color: #ddd;
-}
-tr:nth-child(odd) {
-  background-color: #aaa;
-}
-
-td.b1 {
-  background-color: #ddd;
-}
-
-td.b2 {
-  background-color: #aaa;
-}
-
-td.bbg {
-  border-bottom: 1px solid #888;
-}
-
-th.bbw {
-  border-bottom: 1px solid #fff;
-}
-
-th {
-  text-align: left;
-  padding-left: 10px;
-  background-color: #444;
-  color: #fff;
-}
-
-.hidden {
-  display: none;
-}
-
-.centered {
-  text-align: center;
-}
-
-.reinitbox {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  padding: 10px;
-  text-align:right;
-  background-color:#fafafa;
-}
-
 .container {
- padding-bottom: 25px;
+ padding-bottom: 10px;
 }
