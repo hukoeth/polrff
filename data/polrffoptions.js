@@ -13,6 +13,7 @@ function saveoptions() {
     "polrurl": document.getElementById("polrurl").value,
     "polrapi": document.getElementById("apikey").value
   }
+  if (myoptions.polrurl.endsWith("/")) {myoptions.polrurl=myoptions.polrurl.slice(0, -1)};
   self.port.emit("saveoptions", myoptions);
   alert("Settings Saved");
 }
