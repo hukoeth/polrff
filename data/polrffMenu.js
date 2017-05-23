@@ -24,7 +24,7 @@ function shortenURL() {
   oReq.addEventListener("load", function() {
     document.getElementById("short_url").value=this.responseText;
   });
-  oReq.open("GET", _polr_url+"/api/v2/action/shorten?key="+_polr_key+"&url="+orgUrl);
+  oReq.open("GET", _polr_url+"/api/v2/action/shorten?key="+_polr_key+"&url="+encodeURIComponent(orgUrl));
   oReq.send();  
 }
 
