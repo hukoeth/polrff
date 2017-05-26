@@ -1,26 +1,29 @@
 {
   "title": "polrff",
-  "name": "polrff",
-  "version": "0.0.5",
-  "description": "Shorten URLs with Polr",
-  "main": "index.js",
   "author": "Hans-Ulrich Koeth",
   "supportmail": "email@kiot.eu",
-  "icon": "data/icon-32.png",
+  "icon": "icons/icon-32.png",
   "id": "polrff@kiot",
-  "lib": "lib",
-  "engines": {
-    "firefox": ">=32.0a1"
+  "description": "Shorten URLs with Polr",
+  "manifest_version": 2,
+  "name": "polrff",
+  "version": "0.6",
+ 
+  "browser_action": {
+    "browser_style": true,
+    "default_popup": "popup/shorten.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
   },
-  "license": "MIT",
-  "keywords": [
-    "polr",
-    "URL",
-    "shorten"
-  ],
-  "permissions": {
-    "multiprocess": true
+
+  "options_ui": {
+      "page": "options.html",
+      "browser_style": true
   },
+  "permissions": ["storage"],
+  
   "preferences": [{
       "name": "polrurl",
       "title": "URL to your Polr v2 installation",
@@ -34,6 +37,5 @@
       "description": "Please log on to your Polr installation and go to the admin area to get your API key.",
       "type": "string",
       "value": ""
-  }],
-  "browser": "Firefox"
+  }]
 }

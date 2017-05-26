@@ -1,0 +1,23 @@
+html, body {
+  width: 400px;
+}
+
+.menu-entry {
+  width: 100%;
+  padding: 4px;
+  font-size: 1em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.header {
+  width: 100%;
+  padding: 4px;
+  font-size: 1.5em;
+  text-align: left;
+  border-bottom: 1px solid gray;
+}
+
+.menu-entry:hover {
+  background-color: #CFF2F2;
+}
