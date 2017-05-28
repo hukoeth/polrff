@@ -28,11 +28,17 @@
       "browser_style": true
   },
   
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["copytoclipboard.js"]
+  }],
+  
   "permissions": [
       "storage",
       "contextMenus",
       "tabs",
-      "notifications"
+      "notifications",
+      "clipboardWrite"
   ],
 
   "background": {

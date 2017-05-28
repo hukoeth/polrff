@@ -10,6 +10,14 @@ chrome.contextMenus.create({
   contexts: ["link"]
 });
 
+var portFromCS;
+
+function connected(p) {
+  portFromCS = p;
+}
+
+browser.runtime.onConnect.addListener(connected);
+
 browser.contextMenus.onClicked.addListener(function(info, tab) {
   switch (info.menuItemId) {
     case "shortenpriv":
@@ -23,16 +31,26 @@ browser.contextMenus.onClicked.addListener(function(info, tab) {
 
 function shortenURL(isPublic, orgURL) {
   function setCurrentSettings(result) {
-    var publictext = "private";
-    var shortURL = orgURL;
-    if (isPublic) publictext = "public";
-    var opt = {
-      type: "basic",
-      title: "Polrff short URL",
-      message: "The "+publictext+" short URL for "+orgURL+"hast been copied to the clipboard\r\n("+shortURL+")",
-      iconUrl: browser.extension.getURL("icons/icon-32.png")
+    if ((!result.polrurl.startsWith("http://") && !result.polrurl.startsWith("https://")) || result.polrapikey == "") {
+      var openingPage = browser.runtime.openOptionsPage();
+      return;
     }
-    chrome.notifications.create("polrff", opt, function(){});
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", function() {
+      var publictext = "private";
+      var shortURL = this.responseText;
+      portFromCS.postMessage({shortURL: shortURL});
+      if (isPublic) publictext = "public";
+      var opt = {
+        type: "basic",
+        title: "Polrff short URL",
+        message: "The "+publictext+" short URL for "+orgURL+"hast been copied to the clipboard\r\n("+shortURL+")",
+        iconUrl: browser.extension.getURL("icons/icon-32.png")
+      }
+      chrome.notifications.create("polrff", opt, function(){});
+    });
+    oReq.open("GET", result.polrurl+"/api/v2/action/shorten?key="+result.polrapikey.trim()+"&url="+encodeURIComponent(orgURL)+"&is_secret="+!isPublic);
+    oReq.send();  
   }
 
   function onError(error) {

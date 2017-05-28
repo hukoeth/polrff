@@ -1,5 +1,8 @@
 function saveOptions(e) {
   e.preventDefault();
+  if (document.querySelector("#polrurl").value.endsWith("/")) {
+    document.querySelector("#polrurl").value=document.querySelector("#polrurl").value.slice(0, -1)
+  };
   browser.storage.sync.set({
     polrurl: document.querySelector("#polrurl").value,
     polrapikey:  document.querySelector("#apikey").value
