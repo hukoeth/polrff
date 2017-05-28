@@ -3,10 +3,21 @@ document.addEventListener("click", function(e) {
     return;
   }
   if (e.target.classList.contains("pff_gen_priv")) {
-    alert("Private");
+    var query = { active: true, currentWindow: true };
+    chrome.tabs.query(query, function(tabs) {
+      var bgPage = chrome.extension.getBackgroundPage();
+      bgPage.shortenURL(false, tabs[0].url);
+      window.close();
+    });
   } else if (e.target.classList.contains("pff_gen_pub")) {
-    alert("Public");
+    var query = { active: true, currentWindow: true };
+    chrome.tabs.query(query, function(tabs) {
+      var bgPage = chrome.extension.getBackgroundPage();
+      bgPage.shortenURL(false, tabs[0].url);
+      window.close();
+    });
   } else if (e.target.classList.contains("pff_settings")) {
-    alert("Settings");
+    var openingPage = browser.runtime.openOptionsPage();
+    window.close();
   }
 });
